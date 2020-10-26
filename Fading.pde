@@ -1,3 +1,7 @@
+import gifAnimation.*;
+
+GifMaker gifExport;
+
 color FG = #111111;
 color BG = #f1f1f1;
 color m = #585555;
@@ -9,23 +13,27 @@ float scaling = 1;
 
 
 void setup(){
-  img = loadImage("test.jpg");
-  pg = createGraphics(1000, 600);
-  size(1200, 600, P2D);
-  pixelDensity(2); // set for high resolution, used in fix number
-  //setupSketch();
+  img = loadImage("OriginalImage.jpg");
+  pg = createGraphics(800, img.height);
+  size(800, img.height - 50, P2D);
+  //pixelDensity(2); // set for high resolution, used in fix number
   shapeMode(CENTER);
   rectMode(CENTER);
   textMode(SHAPE); // control text
+  
   noCursor(); // hindes the cursor from view
   noStroke(); // disables drawing the stroke
   ellipseMode(CENTER);
+  //set gif
+  //frameRate(12);
+  gifExport = new GifMaker(this, "ExportGIF.gif");
+  gifExport.setRepeat(0);
+
 }
 
 void draw(){
   background(BG);
-  
-  img.resize((int)600, 0);
+  img.resize((int)800, 0);
   pg.beginDraw();
   pg.background(BG);
   pg.noStroke();
@@ -72,4 +80,10 @@ void draw(){
     }
   }
   
+  gifExport.setDelay(1);
+  gifExport.addFrame();
+}
+
+void mousePressed() {
+    gifExport.finish();                 // write file
 }
