@@ -6,7 +6,7 @@ I tried to use *processing* to express the series of fonts and icons design for 
 **Original  Imgae**  
 ![Original Image](https://github.com/Qianqianshi1/Processing-Fading/blob/main/OriginalImage.jpg)  
 **Simulation Result**  
-![Simulated Video](https://github.com/Qianqianshi1/Processing-Fading/blob/main/ExportGIF.gif)
+![Simulated GIF](https://github.com/Qianqianshi1/Processing-Fading/blob/main/ExportGIF.gif)
 
 ## Requirements
 Processing v2.2.1 (Download link: https://processing.org/download/)  
